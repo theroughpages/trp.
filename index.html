@@ -1,309 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>the rough pages</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f8f1e7;
-      font-family: Georgia, serif;
-      color: #5f4b4b;
-      overflow-x: hidden;
-    }
-    /* floating stars */
-    .star {
-      position: fixed;
-      color: #d8c3e3;
-      animation: float 6s infinite ease-in-out;
-      font-size: 20px;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-    .star:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-    .star:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; }
-    .star:nth-child(3) { top: 70%; left: 10%; animation-delay: 4s; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>the rough pages</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f1e7;
+      font-family: Georgia, serif;
+      color: #5f4b4b;
+      overflow-x: hidden;
+    }
+    /* floating stars */
+    .star {
+      position: fixed;
+      color: #d8c3e3;
+      animation: float 6s infinite ease-in-out;
+      font-size: 20px;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .star:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+    .star:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; }
+    .star:nth-child(3) { top: 70%; left: 10%; animation-delay: 4s; }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
-    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
 
-    header {
-      text-align: center;
-      padding: 90px 20px 50px;
-    }
-    h1 {
-      font-size: 72px;
-      color: #c89fa3;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    .subtitle {
-      color: #8b6f8e;
-      font-style: italic;
-      font-size: 20px;
-    }
-    .quote {
-      margin-top: 35px;
-      color: #7b5e57;
-      font-size: 26px;
-    }
+    header {
+      text-align: center;
+      padding: 90px 20px 50px;
+    }
+    h1 {
+      font-size: 72px;
+      color: #c89fa3;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .subtitle {
+      color: #8b6f8e;
+      font-style: italic;
+      font-size: 20px;
+    }
+    .quote {
+      margin-top: 35px;
+      color: #7b5e57;
+      font-size: 26px;
+    }
 
-    .section {
-      width: 85%;
-      max-width: 1400px;
-      margin: auto;
-      margin-top: 50px;
-      margin-bottom: 70px;
-    }
-    .section-title {
-      font-size: 55px;
-      color: #9b7e8d;
-      margin-bottom: 25px;
-    }
+    .section {
+      width: 85%;
+      max-width: 1400px;
+      margin: auto;
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+    .section-title {
+      font-size: 55px;
+      color: #9b7e8d;
+      margin-bottom: 25px;
+    }
 
-    /* Compact Card Styles */
-    .reading-card {
-      background: #fffaf5;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
-      transition: 0.3s ease;
-      max-width: 600px; 
-    }
-    .reading-card:hover {
-      transform: translateY(-4px);
-    }
-    .book-title {
-      font-size: 28px; 
-      color: #7b5e57;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .book-author {
-      color: #9d8b8b;
-      font-size: 18px; 
-      margin-bottom: 15px;
-    }
-    .review {
-      font-size: 19px; 
-      line-height: 1.6;
-    }
-    .reviewer-tag {
-      margin-top: 15px;
-      color: #9d8b8b;
-      font-style: italic;
-      font-size: 16px;
-    }
+    /* Compact Card Styles */
+    .reading-card {
+      background: #fffaf5;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+      max-width: 600px; 
+    }
+    .reading-card:hover {
+      transform: translateY(-4px);
+    }
+    .book-title {
+      font-size: 28px; 
+      color: #7b5e57;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .book-author {
+      color: #9d8b8b;
+      font-size: 18px; 
+      margin-bottom: 15px;
+    }
+    .review {
+      font-size: 19px; 
+      line-height: 1.6;
+    }
+    .reviewer-tag {
+      margin-top: 15px;
+      color: #9d8b8b;
+      font-style: italic;
+      font-size: 16px;
+    }
 
-    .submit-button {
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 40px;
-      padding: 14px 24px;
-      background-color: #c89fa3;
-      color: white;
-      text-decoration: none;
-      border-radius: 18px;
-      font-size: 18px;
-      transition: 0.3s ease;
-    }
-    .submit-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      padding: 14px 24px;
+      background-color: #c89fa3;
+      color: white;
+      text-decoration: none;
+      border-radius: 18px;
+      font-size: 18px;
+      transition: 0.3s ease;
+    }
+    .submit-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-    .two-column-section {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .left-column { flex: 1.4; }
-    .right-column {
-      flex: 1.1;
-      position: sticky;
-      top: 40px;
-    }
+    .two-column-section {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .left-column { flex: 1.4; }
+    .right-column {
+      flex: 1.1;
+      position: sticky;
+      top: 40px;
+    }
 
-    .mission-text { font-size: 22px; line-height: 1.9; margin-bottom: 25px; }
-    .mission-subtext { font-size: 20px; line-height: 1.8; color: #8b6f8e; }
+    .mission-text { font-size: 22px; line-height: 1.9; margin-bottom: 25px; }
+    .mission-subtext { font-size: 20px; line-height: 1.8; color: #8b6f8e; }
 
-    @media (max-width: 900px) {
-      .two-column-section { flex-direction: column; }
-      .right-column { position: static; width: 100%; }
-    }
+    @media (max-width: 900px) {
+      .two-column-section { flex-direction: column; }
+      .right-column { position: static; width: 100%; }
+    }
 
-    /* Top Books Section */
-    .top-books-section { margin-top: 60px; }
-    .mini-title { font-size: 38px; color: #9b7e8d; margin-bottom: 25px; }
-    .book-grid { display: flex; gap: 22px; flex-wrap: wrap; }
-    .top-book-card {
-      background: #fffaf5;
-      border-radius: 24px;
-      padding: 20px;
-      width: 180px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .top-book-image { width: 100%; border-radius: 16px; margin-bottom: 15px; }
-    .top-book-name { color: #7b5e57; font-size: 24px; font-weight: bold; }
-    .top-book-author { color: #9d8b8b; font-size: 18px; font-style: italic; }
+    /* Top Books Section */
+    .top-books-section { margin-top: 60px; }
+    .mini-title { font-size: 38px; color: #9b7e8d; margin-bottom: 25px; }
+    .book-grid { display: flex; gap: 22px; flex-wrap: wrap; }
+    .top-book-card {
+      background: #fffaf5;
+      border-radius: 24px;
+      padding: 20px;
+      width: 180px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .top-book-image { width: 100%; border-radius: 16px; margin-bottom: 15px; }
+    .top-book-name { color: #7b5e57; font-size: 24px; font-weight: bold; }
+    .top-book-author { color: #9d8b8b; font-size: 18px; font-style: italic; }
 
-    footer {
-      text-align: center;
-      padding: 50px;
-      color: #8b6f8e;
-      font-style: italic;
-      font-size: 20px;
-    }
-    
-/* Dropdown/Hidden Section Styles */
-#extra-reviews {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-}
-
-.see-more-btn {
-  background: none;
-  border: 1px solid #c89fa3;
-  color: #c89fa3;
-  padding: 10px 15px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-family: Georgia, serif;
-  cursor: pointer;
-  margin-bottom: 30px;
-  transition: 0.3s;
-}
-
-.see-more-btn:hover {
-  background-color: #c89fa3;
-  color: white;
-}
-
-
-  </style>
+    footer {
+      text-align: center;
+      padding: 50px;
+      color: #8b6f8e;
+      font-style: italic;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="star">✦</div>
-  <div class="star">✧</div>
-  <div class="star">⋆</div>
+  <div class="star">✦</div>
+  <div class="star">✧</div>
+  <div class="star">⋆</div>
 
-  <header>
-    <h1>the rough pages</h1>
-    <div class="subtitle">by mihika yashwanth & rasika fadatare</div>
-    <div class="quote">“a book a day keeps the reality away!”</div>
-  </header>
+  <header>
+    <h1>the rough pages</h1>
+    <div class="subtitle">by mihika yashwanth & rasika fadatare</div>
+    <div class="quote">“a book a day keeps the reality away!”</div>
+  </header>
 
-  <section class="section two-column-section">
-    <div class="left-column">
-      <div class="section-title">community inbox</div>
-      <a class="submit-button" href="https://forms.gle/BYQ1NwEsapXkkjND8" target="_blank">
-        submit your current read
-      </a>
+  <section class="section two-column-section">
+    <div class="left-column">
+      <div class="section-title">community inbox</div>
+      <a class="submit-button" href="https://forms.gle/BYQ1NwEsapXkkjND8" target="_blank">
+        submit your current read
+      </a>
 
-<div id="reviews-visible"></div>
+      <div class="top-books-section">
+        <div class="mini-title">top books of the month</div>
+        <div class="book-grid">
+          <div class="top-book-card">
+            <img src="https://m.media-amazon.com/images/I/915qHnRAvNL.jpg" class="top-book-image">
+            <div class="top-book-name">five survive</div>
+            <div class="top-book-author">holly jackson</div>
+          </div>
+          <div class="top-book-card">
+            <img src="https://m.media-amazon.com/images/I/71vflgiZIUL._AC_UF1000,1000_QL80_.jpg" class="top-book-image">
+            <div class="top-book-name">better than the movies</div>
+            <div class="top-book-author">lynn painter</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<button id="see-more-btn" class="see-more-btn" style="display: none;">see more reviews ♡</button>
+    <div class="right-column">
+      <div class="section-title">our mission</div>
+      <div class="reading-card">
+        <div class="mission-text">
+          we created the rough pages as a creative outlet for the students of elpro international school! in our opinion, every student deserves a place where they can share their love for words with others readers too, and we want the rough pages to be that place!
+        </div>
+        <a class="submit-button" href="https://www.instagram.com/theroughpages_elpro/" style="margin-top: 30px;">
+          our instagram ♡
+        </a>
+      </div>
+    </div>
+  </section>
 
-<div id="extra-reviews"></div>
-
-      <div class="top-books-section">
-        <div class="mini-title">top books of the month</div>
-        <div class="book-grid">
-          <div class="top-book-card">
-            <img src="https://m.media-amazon.com/images/I/915qHnRAvNL.jpg" class="top-book-image">
-            <div class="top-book-name">five survive</div>
-            <div class="top-book-author">holly jackson</div>
-          </div>
-          <div class="top-book-card">
-            <img src="https://m.media-amazon.com/images/I/71vflgiZIUL._AC_UF1000,1000_QL80_.jpg" class="top-book-image">
-            <div class="top-book-name">better than the movies</div>
-            <div class="top-book-author">lynn painter</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="right-column">
-      <div class="section-title">our mission</div>
-      <div class="reading-card">
-        <div class="mission-text">
-          we created the rough pages as a creative outlet for the students of elpro international school! in our opinion, every student deserves a place where they can share their love for words with others readers too, and we want the rough pages to be that place!
-
-        </div>
-        <a class="submit-button" href="https://www.instagram.com/theroughpages_elpro/" style="margin-top: 30px;">
-          our instagram ♡
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>made with love, an unhealthy amount of caffeine, and crashouts ♡</footer>
-
-<script>
-  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiGUoOJZkrmmGJO-1pUvlIuL0lJhGZ6wXogcvpmyNbwEg92rEHo4fC-tNL-tJZ6oAQhH1VvShthC_a/pub?output=csv";
-  
-  fetch(sheetURL)
-    .then(response => response.text())
-    .then(data => {
-      const rows = data.split("\n").slice(1);
-      rows.reverse();
-      
-      const visibleContainer = document.getElementById("reviews-visible");
-      const extraContainer = document.getElementById("extra-reviews");
-      const seeMoreBtn = document.getElementById("see-more-btn");
-
-      let count = 0;
-
-      rows.forEach(row => {
-        const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        if (columns.length < 5) return;
-
-        // THIS IS THE FIX:
-const name = columns[1]?.replace(/"/g, "").trim();
-const author = columns[2]?.replace(/"/g, "").trim(); // Author is in Column 2
-const title = columns[3]?.replace(/"/g, "").trim();  // Title is in Column 3
-const review = columns[4]?.replace(/"/g, "").trim();
-
-        if (!title) return;
-
-        const card = document.createElement("div");
-        card.classList.add("reading-card");
-        card.innerHTML = `
-          <div class="book-title">${title}</div>
-          <div class="book-author">by ${author}</div>
-          <div class="review">"${review}"</div>
-          <p class="reviewer-tag">— ${name}</p>
-        `;
-
-        if (count < 3) {
-          visibleContainer.appendChild(card);
-        } else {
-          extraContainer.appendChild(card);
-          seeMoreBtn.style.display = "block"; // Only shows button if a 4th review exists
-        }
-        count++;
-      });
-
-      // Toggle functionality
-      seeMoreBtn.addEventListener("click", () => {
-        if (extraContainer.style.display === "flex") {
-          extraContainer.style.display = "none";
-          seeMoreBtn.innerText = "see more reviews ♡";
-        } else {
-          extraContainer.style.display = "flex";
-          seeMoreBtn.innerText = "see less reviews ✧";
-        }
-      });
-    });
-</script>
+  <footer>made with love, an unhealthy amount of caffeine, and crashouts ♡</footer>
 
 </body>
 </html>
-
-remove the script that shows the submissions and all on the page
